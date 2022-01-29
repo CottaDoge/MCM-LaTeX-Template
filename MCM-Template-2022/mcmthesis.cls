@@ -158,8 +158,8 @@
   \setlength{\parindent}{0pt}
   %\iffalse
   \begin{tabular}{m{.3\textwidth}<{\centering} m{.225\textwidth}<{\centering} m{.375\textwidth}<{\centering}}
-  \textbf{\large Problem Chosen} &\textbf{\large\the\year} & \textbf{\large Control Team Number} \\
-  % \textbf{\large Problem Chosen} &\textbf{\large 2022} & \textbf{\large Control Team Number} \\ % 强行改为需要的年份
+  \textbf{\large Problem Chosen} &\textbf{\large\the\year} & \textbf{\large Team Control Number} \\
+  % \textbf{\large Problem Chosen} &\textbf{\large 2022} & \textbf{\large Team Control Number} \\ % 强行改为需要的年份
   \multirow{2}{0.3\textwidth}{\centering\Huge\textcolor{red}{\textbf{\MCM@opt@problem}}}
          & \textbf{\large MCM/ICM}  &
    \multirow{2}{0.375\textwidth}{\centering\Huge\textcolor{red}{\textbf{\MCM@opt@tcn}}} \\

@@ -28,7 +28,10 @@
     % \renewcommand{\baselinestretch}{1.2}      % 行间距
     \setlength{\parskip}{0.5em}                 % 段间距
 
-    % 以下三种字体都太丑, 不建议使用()
+    \usepackage{tikz}
+        \usetikzlibrary{arrows} % 按需要添加扩展
+
+    % 一般默认字体就好
     % \usepackage{mathptmx}     %% 数学公式罗马字体，对公式和正文都起作用
     % \usepackage{txfonts}      %% 数学公式罗马字体，对公式和正文都起作用
     % \usepackage{mathpazo}     %% COMAP 官方版物字体，对公式和正文都起作用
@@ -53,7 +56,13 @@
   
 \begin{document}
     \begin{summary}
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima vitae doloremque maxime similique, reiciendis blanditiis in dolore dolores necessitatibus, deserunt, quibusdam sapiente delectus nulla? Distinctio, eaque non. Accusantium, amet voluptate.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus porro exercitationem magnam error non. Consectetur praesentium quaerat libero doloribus cumque ea? Veniam sapiente eum voluptatem omnis nostrum error iusto consequatur aspernatur perferendis ea sit architecto dolore, fugiat nam reiciendis accusantium! Voluptatum odio quis atque laboriosam. Vitae nemo aspernatur doloremque nam nulla, commodi earum architecto repellendus, odit doloribus hic deleniti facere praesentium aperiam accusamus? Perferendis dolorum dolor enim iste aperiam ipsam est voluptas modi neque minus architecto, consectetur delectus. Esse, incidunt.
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. A reiciendis quisquam nobis vel quos voluptatum, eum iusto vitae nam similique? Minus consequuntur placeat cupiditate itaque recusandae! Cupiditate quod, perspiciatis aliquid et ratione maxime temporibus aspernatur, accusamus nobis eaque illo culpa perferendis possimus sit eveniet iusto. Ea, culpa sapiente ullam delectus accusantium totam reprehenderit neque porro omnis dignissimos fugiat libero et harum beatae aperiam eligendi eaque dolor adipisci doloremque incidunt. Cum, deserunt ipsum. A dolorum ducimus suscipit. Culpa quos, quibusdam libero, pariatur quis asperiores commodi maxime dicta accusamus exercitationem qui ullam, illo natus velit praesentium quisquam nesciunt unde modi tenetur consequatur dolor doloremque esse. Repellat delectus quaerat illum obcaecati optio libero reprehenderit aliquid atque veritatis veniam quisquam, exercitationem perspiciatis sit laboriosam. Enim est exercitationem similique architecto eaque quis? Vero quod, nesciunt praesentium tempora excepturi voluptatibus saepe eveniet illum harum, officiis laborum optio perspiciatis. Dolore dolor laboriosam a quasi nulla vel deleniti.
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur voluptatem, atque quaerat ratione maiores ab magnam eum neque nostrum pariatur, labore reprehenderit illum expedita perferendis optio nisi voluptates ducimus quam molestiae sed odit sunt! Corrupti tempore unde, delectus in excepturi exercitationem laborum ipsam nemo ad? Corrupti, totam, in, nemo dolorem doloribus neque harum exercitationem temporibus nulla est at saepe! Officia cumque, quo quibusdam rem, ipsam reprehenderit eos debitis inventore eaque minima, sunt tenetur labore ducimus nam voluptas accusamus exercitationem numquam ab ratione ad error. Fugiat qui nesciunt dignissimos tempore adipisci aliquam pariatur. Architecto asperiores pariatur voluptatum inventore dolorum dolor dolores?
+
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam quae minima, provident aperiam totam quaerat, commodi suscipit dicta maiores tempora accusantium error reprehenderit sunt placeat eaque dolores voluptates. Saepe nobis aliquam error dolore ex velit corporis fugit vel? Tenetur accusamus nam inventore fugiat, possimus deserunt eveniet pariatur incidunt maxime aspernatur?
 
         \vspace{2em}
         \noindent\textbf{Key Words: } KeyWord1; KeyWord2
@@ -68,15 +77,22 @@
     \section{Introduction}
         \subsection{Problem Background}
             \hspace*{2em}Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima vitae doloremque maxime similique, reiciendis blanditiis in dolore dolores necessitatibus, deserunt, quibusdam sapiente delectus nulla? Distinctio, eaque non. Accusantium, amet voluptate. \cite{link}
-            \[
+            \begin{equation}
                 \int_{1926}^{+\infty} \text{Ha}(t)\mathrm{d}t
-            \]
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima vitae doloremque maxime similique, reiciendis blanditiis in dolore dolores necessitatibus, deserunt, quibusdam sapiente delectus nulla? Distinctio, eaque non. Accusantium, amet voluptate. 
+                \label{eq:+1s}    
+            \end{equation}
+            Lorem \eqref{eq:+1s}, ipsum dolor sit amet consectetur adipisicing elit. Minima vitae doloremque maxime similique, reiciendis blanditiis in dolore dolores necessitatibus, deserunt, quibusdam sapiente delectus nulla? Distinctio, eaque non. Accusantium, amet voluptate. 
             \begin{figure}[htpb]
                 \centering
-                \includegraphics[width = .4\textwidth]{test}
-                \vspace{-1em}
-                \caption{Ha}
+                \begin{tikzpicture}[very thick]
+                    \draw (0, 0) rectangle (1.5, 1)
+                        (2, 0) rectangle +(1.5, 1);
+                    \draw (1.5, .5) -- (2, .5);
+                    \fill (1.5, -.3) circle (2pt)
+                        (2, -.3) circle (2pt);
+                \end{tikzpicture}
+                \vspace{-.5em}
+                \caption{Senior}
                 \label{fig:1}
             \end{figure}
             
@@ -100,7 +116,7 @@
         
 
     \section{Notation}
-        \hspace*{2em}Important notations used in this paper are listed in the table below.
+        \hspace*{2em}Important notations used in this paper are listed in the table \ref{tab:notations}.
         \vspace{-.5em}
         \begin{table}[htbp]
             \centering
@@ -113,6 +129,7 @@
                     $t$ & Time \\
                 \bottomrule             % 底部线
             \end{tabular}
+            \label{tab:notations}
         \end{table}
 
 
